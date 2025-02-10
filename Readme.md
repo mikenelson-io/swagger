@@ -6,7 +6,7 @@ This is a tool that provides the Pure Storage FlashArray and FlashBlade API docu
 ## Try It: 
 Requires [docker](https://docs.docker.com/install/) to be installed
 
-> docker run -it --rm -p 80:5000 quay.io/purestorage/swagger 
+> docker run -it --rm -p 127.0.0.1:80:5000 quay.io/purestorage/swagger 
 
 Then open your browser to http://127.0.0.1
 Then select an API spec and enter your FlashArray or FlashBlade IP.
@@ -62,4 +62,6 @@ just ctrl^c on the console docker container
 
 In order to send API calls to an array you must 
 1.  Have a FlashArray or FlashBlade and login credentials
+
+
 

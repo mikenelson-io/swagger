@@ -22,13 +22,18 @@ jobs:
           pip install tox
 
       - name: Build image
-        env:
-          DOCKER_BUILDKIT: 1
         run: |
           tox -e podman -- ${{ github.event.release.tag_name }}
+
+      - name: Debug image storage
+        run: |
+          echo "Docker Images:"
+          docker images
+          echo "Podman Images:"
+          podman images
           
       - name: Push swagger
-        uses: redhat-actions/push-to-registry@v2.1.1
+        uses: redhat-actions/push-to-registry@v2
         with:
           image: swagger
           tags: ${{ github.event.release.tag_name }} latest

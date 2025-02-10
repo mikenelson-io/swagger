@@ -1,9 +1,8 @@
 #!/bin/bash
-# there are no new pdf versions so don't update them.
-#python3 convert_all_fa_pdf.py
+echo "Get the latest files from artfactory: https://artifactory.pstg-inf.net/ui/repos/tree/General/virtual-pure-shared-purest-maven/release/com/purestorage/purest"
 
-#Pureset download update highest version mnumbers then run
-python3 purest_download.py  --overwrite-local-files
+echo "And extract to definitions/oas2.0 & definitions/oas3.0 (not used yet)"
+read -p "Press enter to continue"
+
 python3 apply_templates.py
 python3 create_spec_index.py
-
