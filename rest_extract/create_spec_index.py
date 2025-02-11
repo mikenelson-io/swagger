@@ -41,6 +41,8 @@ def main():
             version_split = item["version"].split('.')
             if version_split[1] == 'X':
                 version_split[1] = 99
+            if version_split[1] == 'DEV'
+                version_split[1] = 99
             
             item['version_sort'] = priority + int(version_split[0])*100 + int(version_split[1])
             item['filename'] = file_name
